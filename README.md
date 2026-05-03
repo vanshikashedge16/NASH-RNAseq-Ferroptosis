@@ -116,8 +116,6 @@ source("rna_seq_analysis.R")
 GEO Accession: **GSE135251**
 Available at: https://www.ncbi.nlm.nih.gov/geo/
 
-*(Consider adding the associated research publication for full citation if available.)*
-
 ---
 
 ## 🧠 Future Improvements
@@ -131,7 +129,7 @@ Available at: https://www.ncbi.nlm.nih.gov/geo/
 
 ## 👤 Author
 
-* Vanshika Hegde
+Vanshika shegde
 
 ---
 
