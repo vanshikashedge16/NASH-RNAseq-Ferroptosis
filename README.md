@@ -30,7 +30,7 @@ Key ferroptosis-related genes identified:
 
 ## 📁 Files Included
 
-* `analysis.R` → complete analysis workflow
+* `rna bulk sequencing analysis` → complete analysis workflow
 * `ferroptosis_NASH_results.csv` → processed results
 * `volcano_plot.png` → visualization
 
