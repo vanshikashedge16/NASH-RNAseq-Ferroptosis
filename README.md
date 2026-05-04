@@ -1,138 +1,168 @@
-# NASH RNA-seq Analysis: Ferroptosis Gene Identification
+# 🔬 Integrative Bioinformatics Analysis of Ferroptosis-Associated Genes in NASH
 
-## 📌 Project Overview
+## 🧠 Overview
 
-This project analyzes publicly available bulk RNA-seq data from GEO (GSE135251) to identify **ferroptosis-related genes** associated with Non-Alcoholic Steatohepatitis (NASH).
+Ferroptosis is a regulated form of cell death characterized by iron-dependent lipid peroxidation and oxidative stress. Emerging evidence suggests its critical involvement in metabolic disorders, particularly Non-Alcoholic Steatohepatitis (NASH), a progressive liver disease associated with steatosis, inflammation, and fibrosis.
 
-Ferroptosis is an iron-dependent form of regulated cell death driven by lipid peroxidation, and it has been increasingly implicated in liver disease progression. This study aims to explore gene expression changes and highlight potential ferroptosis markers involved in NASH.
+This project presents a targeted bioinformatics analysis of ferroptosis-associated genes using RNA-seq-derived differential expression data to uncover molecular mechanisms contributing to NASH pathogenesis.
 
 ---
 
 ## 🎯 Objectives
 
-* Perform differential gene expression analysis using DESeq2
-* Identify significantly upregulated and downregulated genes
-* Filter and highlight ferroptosis-related genes
-* Visualize gene expression patterns using a volcano plot
+* Identify differentially expressed ferroptosis-related genes
+* Perform Gene Ontology (GO) enrichment analysis
+* Visualize gene expression patterns using heatmaps
+* Interpret biological relevance in the context of NASH
 
 ---
 
-## 🧬 Dataset
+## 🧪 Methodology
 
-* Source: Gene Expression Omnibus (GEO)
-* Accession ID: GSE135251_RAW
-* Type: Bulk RNA-seq data
+### 1. Differential Expression Analysis
 
-This dataset contains gene expression profiles used to analyze transcriptional changes associated with NASH.
+* RNA-seq data analyzed using statistical frameworks (e.g., DESeq2)
+* Extracted log2 fold change (log2FC), p-values, and adjusted p-values
 
-🔗 GEO Link: https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135251
+### 2. Gene Selection
 
----
+* Curated ferroptosis-associated genes from literature
+* Mapped gene symbols and filtered from dataset
 
-## ⚙️ Tools & Technologies
+### 3. GO Enrichment Analysis
 
-* R Programming Language
-* DESeq2 (Differential Expression Analysis)
-* ggplot2 (Data Visualization)
+* Conducted using **clusterProfiler**
+* Focused on Biological Process (BP) ontology
+* Applied Benjamini–Hochberg correction
 
----
+### 4. Visualization
 
-## 🔬 Methodology
-
-1. Load RNA-seq count data from GEO dataset
-2. Perform preprocessing and normalization
-3. Conduct differential expression analysis using DESeq2
-4. Apply statistical thresholds:
-
-   * Adjusted p-value (FDR)
-   * Log2 Fold Change
-5. Identify ferroptosis-related genes
-6. Generate volcano plot for visualization
+* Volcano plot for global expression patterns
+* Heatmap for ferroptosis gene expression (log2FC)
+* GO enrichment plots (dotplot/barplot)
 
 ---
 
-## 📊 Results
+## 📊 Results & Biological Interpretation
 
-* Differential gene expression analysis identified significantly altered genes between conditions
-* Visualization via volcano plot highlights:
+### 🌋 Volcano Plot
 
-  * Upregulated genes
-  * Downregulated genes
-  * Non-significant genes
+The volcano plot highlights significantly upregulated and downregulated genes.
 
-📌 Key Insights:
+🔎 **Interpretation:**
 
-* Genes associated with oxidative stress and lipid metabolism show altered expression patterns
-* These findings suggest a potential role of ferroptosis mechanisms in NASH progression
-* Identified genes may serve as candidates for further functional and pathway analysis
+* Identifies genes involved in oxidative stress, lipid metabolism, and inflammation
+* Ferroptosis-related genes appearing as significant indicate their role in disease-associated cellular stress
 
----
+🧬 **Relevance to NASH:**
 
-## 📈 Visualization
-
-* `volcano_plot.png`
-  A graphical representation of gene expression changes, showing statistical significance versus fold change.
+* NASH progression is driven by oxidative stress and lipid toxicity
+* Differential expression supports involvement of ferroptotic pathways in hepatocyte injury
 
 ---
 
-## 🚀 How to Run the Project
+### 🧬 Heatmap of Ferroptosis Genes
 
-1. Clone the repository:
+The heatmap visualizes log2 fold changes of selected ferroptosis-associated genes.
 
-```bash
-git clone https://github.com/your-username/NASH-RNAseq-Ferroptosis.git
-```
+🔎 **Key Observations:**
 
-2. Open R or RStudio
+* **ACSL4** → promotes lipid peroxidation (ferroptosis sensitivity)
+* **TFRC** → regulates iron uptake
+* **GCLC / GCLM** → control glutathione synthesis and redox balance
 
-3. Install required packages:
+🧬 **Relevance to NASH:**
 
-```r
-install.packages("DESeq2")
-install.packages("ggplot2")
-```
-
-4. Run the analysis script:
-
-```r
-source("rna_seq_analysis.R")
-```
+* Lipid accumulation + iron overload = increased oxidative damage
+* Altered antioxidant defense supports ferroptosis-mediated cell death
+* Highlights coordinated dysregulation of iron metabolism and lipid pathways
 
 ---
 
-## 📂 Repository Structure
+### 🧪 GO Enrichment Analysis
 
-```
-├── README.md
-├── ferroptosis_NASH_results.csv
-├── rna_seq_analysis.R
-├── volcano_plot.png
-```
+Significant enrichment observed in:
 
----
+* Ferroptosis and its regulation
+* Iron ion homeostasis and transport
+* Fatty acid biosynthesis and metabolism
+* Response to oxidative stress
 
-## 📚 Data Citation
+🔎 **Interpretation:**
 
-GEO Accession: **GSE135251**
-Available at: https://www.ncbi.nlm.nih.gov/geo/
+* Strong enrichment validates biological relevance of selected genes
+* Indicates interconnected pathways driving cellular damage
 
----
+🧬 **Relevance to NASH:**
 
-## 🧠 Future Improvements
+* Iron overload enhances ROS production
+* Lipid metabolic imbalance leads to lipotoxicity
+* Oxidative stress promotes inflammation and fibrosis
 
-* Perform pathway enrichment analysis (KEGG / GO)
-* Add heatmaps for top differentially expressed genes
-* Integrate external validation datasets
-* Develop a reproducible workflow using RMarkdown or Snakemake
+👉 These results suggest that **ferroptosis acts as a mechanistic bridge between metabolic dysfunction and liver injury**
 
 ---
 
-## 👤 Author
+## 🔬 Importance in NASH
 
-Vanshika shegde
+NASH is characterized by:
+
+* Hepatic steatosis
+* Oxidative stress
+* Chronic inflammation
+* Progressive fibrosis
+
+Ferroptosis contributes to these features through:
+
+* Iron-dependent lipid peroxidation
+* Glutathione depletion and impaired antioxidant defense
+* Mitochondrial dysfunction
+
+💡 **Key Insight:**
+Ferroptosis is not merely associated with NASH but may actively drive disease progression and severity.
 
 ---
 
-## 📜 License
+## 📁 Outputs
 
-This project is intended for academic and research purposes.
+* 📈 Volcano Plot
+* 🧪 GO Enrichment Plot
+* 🧬 Heatmap of Ferroptosis Genes
+
+---
+
+## 🛠️ Tools & Packages
+
+* R
+* DESeq2
+* clusterProfiler
+* enrichplot
+* pheatmap
+
+---
+
+## 💡 Novel Insight
+
+This study demonstrates that even a targeted set of ferroptosis-related genes can capture core disease-relevant pathways. The integration of differential expression and enrichment analysis reveals a coordinated disruption of iron metabolism, lipid homeostasis, and oxidative stress — key hallmarks of NASH.
+
+---
+
+## 🚀 Future Directions
+
+* KEGG pathway analysis for pathway mapping
+* Integration with multi-omics data
+* Validation in clinical datasets
+* Exploration of therapeutic targets targeting ferroptosis
+
+---
+
+## 👩‍🔬 Author
+
+Vanshika Shedge
+MSc Genetic & Genomic Counseling
+
+---
+
+## ⭐ Note
+
+This project is intended for academic and research purposes, demonstrating the application of bioinformatics tools to understand disease mechanisms at a systems biology level.
